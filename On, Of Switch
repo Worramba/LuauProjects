@@ -1,0 +1,22 @@
+local button = workspace.Button:WaitForChild("Button")
+local switch = true
+
+button.ClickDetector.MouseClick:Connect(function()
+	local lantern = game.Workspace.Lantern:WaitForChild("Lantern")
+	
+	if switch == true then
+		lantern.PointLight.Brightness = 2
+		lantern.Transparency = 0
+		lantern.Material = Enum.Material.Neon
+		print("on")
+		
+		switch = false
+	elseif switch == false then
+		lantern.PointLight.Brightness = 0
+		lantern.Transparency = 0.3
+		lantern.Material = Enum.Material.Glass
+		print("off")
+		
+		switch = true
+	end 
+end)

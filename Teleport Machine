@@ -1,0 +1,70 @@
+local pad1 = workspace.Teleports:WaitForChild("Pad1")
+local pad2 = workspace.Teleports:WaitForChild("Pad2")
+
+local beam = pad1:WaitForChild("Beam").Beamend1.Beam
+local beam2 = pad2:WaitForChild("Beam2").Beamend1.Beam
+
+local canTeleport = true
+
+local offset = Vector3.new(0, 5, 0)
+
+function isHuman(part)
+	local hum = part.Parent:FindFirstChild("HumanoidRootPart")
+	return hum
+end
+
+function isHumanoid(part)
+	local hum = part.Parent:FindFirstChild("Humanoid")
+	return hum
+end
+
+function ToPad1(part)
+	local hum = isHuman(part)
+	local hums = isHumanoid(part)
+	local OGSpeed = hums.WalkSpeed
+	if hum and canTeleport then
+		canTeleport = false
+		hum.CFrame = pad1.CFrame + offset
+		hums.WalkSpeed = 0
+		task.wait(0.5)
+		beam.Enabled = true
+		task.wait(2)
+		beam.Enabled = false
+		hum.CFrame = pad2.CFrame + offset
+		beam2.Enabled = true
+		task.wait(0.5)
+		hums.WalkSpeed = OGSpeed
+		task.wait(2)
+		beam2.Enabled = false
+		task.wait(3)
+		canTeleport = true
+	end
+end
+
+function ToPad2(part)
+	local hum = isHuman(part)
+	local hums = isHumanoid(part)
+	local OGSpeed = hums.WalkSpeed
+	if hum and canTeleport then
+		canTeleport = false
+		hum.CFrame = pad2.CFrame + offset
+		hums.WalkSpeed = 0
+		task.wait(0.5)
+		beam2.Enabled = true
+		task.wait(2)
+		beam.Enabled = false
+		hum.CFrame = pad1.CFrame + offset
+		beam.Enabled = true
+		beam2.Enabled = false
+		task.wait(0.5)
+		hums.WalkSpeed = OGSpeed
+		task.wait(2)
+		beam.Enabled = false
+		task.wait(3)
+		canTeleport = true
+	end
+end
+
+pad1.Touched:Connect(ToPad1)
+pad2.Touched:Connect(ToPad2)
+

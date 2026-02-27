@@ -1,0 +1,6 @@
+local bumper = workspace.SpinningObsitcal:WaitForChild("Bumper")
+
+while true do 
+	bumper.Orientation = bumper.Orientation + Vector3.new(0, 4, 0)
+	task.wait()
+end

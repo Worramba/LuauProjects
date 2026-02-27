@@ -1,7 +1,8 @@
 --SpeedBooster
-local part = workspace:WaitForChild("SpeedBoost")
+local speedBoost = workspace:WaitForChild("SpeedBoost")
 local debounce = false
-part.Touched:Connect(function(hit)
+
+speedBoost.Touched:Connect(function(hit)
 	local humanoid = hit.Parent:FindFirstChild("Humanoid")
 	if humanoid and not debounce then
 		local OGSpeed = humanoid.WalkSpeed
@@ -17,6 +18,7 @@ end)
 --JumpPad
 local JumpPads = workspace:WaitForChild("JumpPads")
 local JumpSound = game.SoundService:WaitForChild("Jumpsound")
+
 JumpPad.Touched:Connect(function(hit)
 		local humanoid = hit.Parent:FindFirstChild("Humanoid")
 		if humanoid and on == false then
@@ -29,3 +31,13 @@ JumpPad.Touched:Connect(function(hit)
 			on = false
 		end
 	end)
+
+--Healer
+local healer = workspace:WaitForChild("Healer")
+
+healer.Touched:Connect(function(hit)
+	local humanoid = hit.Parent:FindFirstChild("Humanoid")
+	if humanoid then
+		humanoid.Health = humanoid.Health + 2
+	end
+end)

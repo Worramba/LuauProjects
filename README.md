@@ -14,8 +14,8 @@
 
 # Mini Project 2026
 ##Day1: Hello, Killer Bricks, Power-ups, Teleport Machine, Zap, On Of Switch.<br/>
-Date Completed: Unknown<br/>
-Purpose: Make myself entertained<br/>
-Key Concepts Learned: Nothing<br/>
+Date Completed: Unknown <br/>
+Purpose: Make myself entertained <br/>
+Key Concepts Learned: Nothing <br/>
 
-##Day2: Nothing Today<br/>
+##Day2: Nothing Today <br/>

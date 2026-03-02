@@ -20,4 +20,7 @@ Key Concepts Learned: Nothing <br/>
 
 ## Day2: Nothing Today <br/>
 
-## Day3 
+## Day3 BlockSpawner <br/>
+Date Completed: March 2, 2026 <br/>
+Purpose: To spawn blocks when UI is clicked <br/>
+Key Concepts Learned: Clicked Event, ReplicatedEvents and DisplayOrder <br/>

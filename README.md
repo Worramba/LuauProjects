@@ -10,7 +10,7 @@
 </p>
 
 <h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://github.com/luau-lang/site/blob/master/logo.svg" alt="python" width="40" height="40"/> </a> </p>
+<p align="left"> <a href="https://www.luau.org" target="_blank" rel="noreferrer"> <img src="https://github.com/luau-lang/site/blob/master/logo.svg" alt="python" width="40" height="40"/> </a> </p>
 
 # Mini Project 2026
 ## Day1: Hello, Killer Bricks, Power-ups, Teleport Machine, Zap, On Of Switch.<br/>

@@ -19,3 +19,4 @@ Purpose: Make myself entertained <br/>
 Key Concepts Learned: Nothing <br/>
 
 ## Day2: Nothing Today <br/>
+

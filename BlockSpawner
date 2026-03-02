@@ -1,0 +1,26 @@
+# In ServerScriptService
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local ServerStorage = game:GetService("ServerStorage")
+local Workspace = game:GetService("Workspace")
+
+local spawnBlock = game.StarterGui:WaitForChild("SpawnBlock")
+
+local loadingEvent = ReplicatedStorage:WaitForChild("LoadingScreenDone")
+local spawnEvent = ReplicatedStorage:WaitForChild("SpawnBlockEvent")
+
+spawnEvent.OnServerEvent:Connect(function(player)
+	local block = ServerStorage:WaitForChild("OldBlock"):Clone()
+	block.Position = Vector3.new(math.random(-10, 10), 5, math.random(-10, 10))
+	block.Parent = Workspace
+	spawnBlock.Enabled = true
+end)
+
+# In StarterGui
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local spawnBlock = script.Parent
+local spawnButton = spawnBlock:WaitForChild("SpawnButton")
+local spawnEvent = ReplicatedStorage:WaitForChild("SpawnBlockEvent")
+
+spawnButton.MouseButton1Click:Connect(function()
+	spawnEvent:FireServer()
+end)

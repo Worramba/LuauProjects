@@ -1,0 +1,25 @@
+local part = script.Parent
+local TPArea = game.Workspace:WaitForChild("TPArea")
+local value = game.Workspace.Counter.SurfaceGui.TextLabel.Value
+local text = game.Workspace.Counter.SurfaceGui.TextLabel
+local on = true
+
+local function updateText()
+	text.Text = tostring(value.Value)
+end
+
+while true do
+	task.wait(1.5)
+	part.Position = TPArea.Position + Vector3.new(math.random(-10, 10), 0, math.random(-10, 10))
+	part.ClickDetector.MouseClick:Connect(function()
+		part.Position = TPArea.Position + Vector3.new(math.random(-10, 10), 0, math.random(-10, 10))
+		
+		if on == true then
+		on = false
+		value.Value = value.Value + 1
+		updateText()
+		task.wait(0.5)
+		on = true
+		end
+	end)
+end

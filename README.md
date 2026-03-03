@@ -5,10 +5,6 @@
 
 - 🌱 I’m currently learning **Luau and Python**
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-</p>
-
 <h3 align="left">Languages and Tools:</h3>
 <p align="left"> <a href="https://luau.org" target="_blank" rel="noreferrer"> <img src="https://github.com/luau-lang/site/blob/master/logo.svg" alt="python" width="40" height="40"/> </a> </p>
 

@@ -1,16 +1,15 @@
-local part = workspace:WaitForChild("Beam"):WaitForChild("LazerTouch")
+local part = script.Parent
 local on = true
 
 part.Touched:Connect(function(hit)
 	local humanoid = hit.Parent:FindFirstChild("Humanoid")
 	local humanoidroot = hit.Parent:FindFirstChild("HumanoidRootPart")
 	if humanoid and on == true then
-		local OGSpeed = humanoid.WalkSpeed
 		on = false
 		humanoid.Health = humanoid.Health - 5
 		humanoid.WalkSpeed = 0
 		task.wait(0.5)
-		humanoid.WalkSpeed = OGSpeed
+		humanoid.WalkSpeed = 16
 		on = true
 	end
 end)

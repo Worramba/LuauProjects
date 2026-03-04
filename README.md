@@ -25,3 +25,9 @@ Key Concepts Learned: Clicked Event, ReplicatedEvents and DisplayOrder <br/>
 Date Completed: March 3, 2026 <br/>
 Purpose: To spawn a block is a specific area where you have to click it <br/>
 Key Concepts Learned: Random spawning, toString and spawning in a specific area <br/>
+
+## Day5 Zap <br/>
+Date Completed: March 4, 2026 <br/>
+Purpose: To damage the player and stop them after touched <br/>
+Key Concepts Learned: Player Walkspeed and Beam <br/>
+

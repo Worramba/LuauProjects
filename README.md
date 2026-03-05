@@ -9,7 +9,7 @@
 <p align="left"> <a href="https://luau.org" target="_blank" rel="noreferrer"> <img src="https://github.com/luau-lang/site/blob/master/logo.svg" alt="python" width="40" height="40"/> </a> </p>
 
 # Mini Project 2026
-## Day1: Hello, Killer Bricks, Teleport Machine,, On Of Switch.<br/>
+## Day1: Hello, Killer Bricks, Teleport Machine, On Of Switch.<br/>
 Date Completed: Unknown <br/>
 Purpose: Make myself entertained <br/>
 Key Concepts Learned: Nothing <br/>

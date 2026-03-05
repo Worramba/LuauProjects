@@ -9,7 +9,7 @@
 <p align="left"> <a href="https://luau.org" target="_blank" rel="noreferrer"> <img src="https://github.com/luau-lang/site/blob/master/logo.svg" alt="python" width="40" height="40"/> </a> </p>
 
 # Mini Project 2026
-## Day1: Hello, Killer Bricks, Power-ups, Teleport Machine, Zap, On Of Switch.<br/>
+## Day1: Hello, Killer Bricks, Teleport Machine,, On Of Switch.<br/>
 Date Completed: Unknown <br/>
 Purpose: Make myself entertained <br/>
 Key Concepts Learned: Nothing <br/>
@@ -30,4 +30,9 @@ Key Concepts Learned: Random spawning, toString and spawning in a specific area 
 Date Completed: March 4, 2026 <br/>
 Purpose: To damage the player and stop them after touched <br/>
 Key Concepts Learned: Player Walkspeed and Beam <br/>
+
+## Day6 Power-ups <br/>
+Date Completed: March 5, 2026 <br/>
+Purpose: To move players and control them and their velocity <br/>
+Key Concepts Learned: Walkspeed, Health, Jump, LinearVelocity <br/>
 

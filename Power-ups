@@ -41,3 +41,26 @@ healer.Touched:Connect(function(hit)
 		humanoid.Health = humanoid.Health + 2
 	end
 end)
+
+--WindPusher
+local zone = script.Parent
+local velocity = Vector3.new(30, 0, 0)
+
+zone.Touched:Connect(function(hit)
+	local character = hit.Parent
+	local root = character:FindFirstChild("HumanoidRootPart")
+
+	if root then
+		local attachment = Instance.new("Attachment")
+		attachment.Parent = root
+
+		local lv = Instance.new("LinearVelocity")
+		lv.Attachment0 = attachment
+		lv.VectorVelocity = velocity
+		lv.MaxForce = math.huge
+		lv.Parent = root
+
+		game.Debris:AddItem(lv, 0.5)
+		game.Debris:AddItem(attachment, 0.5)
+	end
+end)

@@ -38,6 +38,6 @@ Key Concepts Learned: Walkspeed, Health, Jump, LinearVelocity <br/>
 
 
 ## Day7 EventGenerator <br/>
-Date Completed: March 5, 2026 <br/>
-Purpose: To move players and control them and their velocity <br/>
-Key Concepts Learned: Walkspeed, Health, Jump, LinearVelocity <br/>
+Date Completed: March 6, 2026 <br/>
+Purpose: When clicked prompt gives you a random event <br/>
+Key Concepts Learned: Humanoid root, table pairs and ipairs <br/>

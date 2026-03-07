@@ -44,3 +44,5 @@ Pic: <br/>
 Date Completed: March 6, 2026 <br/>
 Purpose: When clicked prompt gives you a random event <br/>
 Key Concepts Learned: Humanoid root, table pairs and ipairs <br/>
+Pic: </br>
+<img src="Event_Generator.png" width="300">

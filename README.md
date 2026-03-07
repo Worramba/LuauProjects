@@ -30,7 +30,7 @@ Key Concepts Learned: Random spawning, toString and spawning in a specific area 
 Date Completed: March 4, 2026 <br/>
 Purpose: To damage the player and stop them after touched <br/>
 Key Concepts Learned: Player Walkspeed and Beam <br/>
-Pic:
+Pic: <br/>
 <img src="Zap.png" width="300">
 
 ## Day6 Power-ups <br/>

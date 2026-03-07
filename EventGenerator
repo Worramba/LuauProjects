@@ -1,0 +1,66 @@
+# General script
+
+local promptPart = game.Workspace:WaitForChild("EventGenerator").PromptPart
+local prompt = promptPart.Attachment.ProximityPrompt
+local eventDisplayer = promptPart.Parent.EventDisplayer
+local eventText = eventDisplayer.SurfaceGui.TextLabel
+
+local cooldown = true
+
+local coins = game.ServerStorage.Coins
+local obbySpawn = game.Workspace.ObbySpawn
+local cage = game.Workspace.Cage.Bottom
+
+local events = {
+	"coin",
+	"obby",
+	"all trapped, haha"
+}
+
+prompt.Triggered:Connect(function()
+	local random = math.random(1, #events)
+	local player = game.Players:GetChildren()
+	eventText.Text = "Event: " .. events[random]
+	if random == 1 then
+		for i = 1, 12 do
+		local coinsCopy = coins:Clone()
+		coinsCopy.Position = Vector3.new(math.random(-60, 60), 15, math.random(-60, 60))
+		coinsCopy.Parent = game.Workspace
+		task.wait(0.5)
+		end
+	end
+	if random == 2 then
+		for _, part in ipairs(player) do
+			part.Character.HumanoidRootPart.Position = obbySpawn.Position + Vector3.new(0, 3, 0)
+		end
+	end
+	if random == 3 then
+		for _, part in ipairs(player) do
+			part.Character.HumanoidRootPart.Position = cage.Position + Vector3.new(0, 1, 0)
+			task.wait(10)
+			part.Character.HumanoidRootPart.Position = game.Workspace.SpawnLocation.Position + Vector3.new(0, 3, 0)
+		end
+	end
+end)
+
+#Obby end
+
+local part = script.Parent
+
+part.Touched:Connect(function(hit)
+	if hit.Parent:FindFirstChild("Humanoid") then
+		hit.Parent.HumanoidRootPart.Position = game.Workspace.SpawnLocation.Position + Vector3.new(0, 3, 0)
+	end
+end)
+
+#CoinsScript
+
+local part = script.Parent
+
+part.Touched:Connect(function(hit)
+	if hit.Parent:FindFirstChild("Humanoid") then
+		local player = game.Players:GetPlayerFromCharacter(hit.Parent)
+		player.leaderstats.Coins.Value += 1
+		part:Destroy()
+	end
+end)

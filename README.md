@@ -52,3 +52,10 @@ Pic: </br>
 <img src="Event_Generator.png" width="300">
 
 ## Day8: Nothing Today <br/>
+
+<table>
+  <tr>
+    <td><img src="WindObby.png" width="300"></td>
+    <td><img src="image2.png" width="300"></td>
+  </tr>
+</table>

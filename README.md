@@ -55,7 +55,7 @@ Pic: </br>
 
 <table>
   <tr>
-    <td><img src="WindObby.png" width="300"></td>
-    <td><img src="SpeedObby.png" width="300"></td>
+    <td><img src="WindObby.png" width="150"></td>
+    <td><img src="SpeedObby.png" width="150"></td>
   </tr>
 </table>

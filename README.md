@@ -53,6 +53,13 @@ Pic: </br>
 
 ## Day8: Nothing Today <br/>
 
+
+## Day7 SpeedObby and WindObby <br/>
+Date Completed: March 8, 2026 <br/>
+Purpose: SpeedObby: Get speed bost and jump long gaps. <br/>
+         WindObby: Go down and dodge wind </br>
+Key Concepts Learned: Humanoid root, table pairs and ipairs <br/>
+Pic: </br>
 <table>
   <tr>
     <td><img src="WindObby.png" width="300"></td>

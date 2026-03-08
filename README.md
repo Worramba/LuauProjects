@@ -21,7 +21,7 @@ Date Completed: March 2, 2026 <br/>
 Purpose: To spawn blocks when UI is clicked <br/>
 Key Concepts Learned: Clicked Event, ReplicatedEvents and DisplayOrder <br/>
 Pic: </br>
-<img src="Block_Spawning_Button.png" width="300">
+<img src="Block_Spawn_Button.png" width="300">
 
 ## Day4 MoleWacker <br/>
 Date Completed: March 3, 2026 <br/>

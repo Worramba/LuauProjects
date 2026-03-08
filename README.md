@@ -54,7 +54,7 @@ Pic: </br>
 ## Day8: Nothing Today <br/>
 
 
-## Day7 SpeedObby and WindObby <br/>
+## Day9 SpeedObby and WindObby <br/>
 Date Completed: March 8, 2026 <br/>
 Purpose: SpeedObby: Get speed bost and jump long gaps <br/>
          WindObby: Go down and dodge wind that puch you off </br>

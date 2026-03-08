@@ -50,3 +50,5 @@ Purpose: When clicked prompt gives you a random event <br/>
 Key Concepts Learned: Humanoid root, table pairs and ipairs <br/>
 Pic: </br>
 <img src="Event_Generator.png" width="300">
+
+## Day8: Nothing Today <br/>

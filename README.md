@@ -9,7 +9,7 @@
 <p align="left"> <a href="https://luau.org" target="_blank" rel="noreferrer"> <img src="https://github.com/luau-lang/site/blob/master/logo.svg" alt="python" width="40" height="40"/> </a> </p>
 
 # Mini Project 2026
-## Day1: Hello, Killer Bricks, Teleport Machine, On Of Switch.<br/>
+## Day1: Hello, Killer Bricks, On Of Switch.<br/>
 Date Completed: Unknown <br/>
 Purpose: Make myself entertained <br/>
 Key Concepts Learned: Nothing <br/>
@@ -66,3 +66,8 @@ Pic: </br>
     <td><img src="SpeedObby.png" width="300"></td>
   </tr>
 </table>
+
+## Day9 TeleportMachine <br/>
+Date Completed: March 9, 2026 <br/>
+Purpose: You touch one part and TP you to other part </br>
+Key Concepts Learned: HumanChecker, TouchDetector and StopPlayerMovement <br/>

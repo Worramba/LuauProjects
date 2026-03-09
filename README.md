@@ -67,7 +67,7 @@ Pic: </br>
   </tr>
 </table>
 
-## Day9 TeleportMachine <br/>
+## Day10 TeleportMachine <br/>
 Date Completed: March 9, 2026 <br/>
 Purpose: You touch one part and TP you to other part </br>
 Key Concepts Learned: HumanChecker, TouchDetector and StopPlayerMovement <br/>

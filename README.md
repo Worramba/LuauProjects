@@ -41,6 +41,11 @@ Pic: <br/>
 Date Completed: March 5, 2026 <br/>
 Purpose: To move players and control them and their velocity <br/>
 Key Concepts Learned: Walkspeed, Health, Jump, LinearVelocity <br/>
+Snippet: local lv = Instance.new("LinearVelocity") </br>
+		lv.Attachment0 = attachment </br>
+		lv.VectorVelocity = velocity </br>
+		lv.MaxForce = math.huge </br>
+		lv.Parent = root </br>
 Pic: <br/>
 <img src="Power-ups.png" width="300">
 
@@ -71,7 +76,7 @@ Pic: </br>
 Date Completed: March 9, 2026 <br/>
 Purpose: You touch one part and TP you to other part </br>
 Key Concepts Learned: HumanChecker, TouchDetector and StopPlayerMovement <br/>
-snippet: "local hum = part.Parent:FindFirstChild("HumanoidRootPart") return hum" </br>
+Snippet: "local hum = part.Parent:FindFirstChild("HumanoidRootPart") return hum" </br>
 Pic: </br>
 <img src="Teleporter.png" width="300">
 
@@ -79,4 +84,4 @@ Pic: </br>
 Date Completed: March 10, 2026 <br/>
 Purpose: When you get coins it updates your coin UI </br>
 Key Concepts Learned: Change and leaderstats <br/>
-snippet: "coins.Changed:Connect(function()" </br>
+Snippet: "coins.Changed:Connect(function()" </br>

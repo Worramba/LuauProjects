@@ -71,7 +71,7 @@ Pic: </br>
 Date Completed: March 9, 2026 <br/>
 Purpose: You touch one part and TP you to other part </br>
 Key Concepts Learned: HumanChecker, TouchDetector and StopPlayerMovement <br/>
-snippet: ""
+snippet: "local hum = part.Parent:FindFirstChild("HumanoidRootPart") return hum" </br>
 Pic: </br>
 <img src="Teleporter.png" width="300">
 

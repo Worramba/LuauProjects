@@ -71,5 +71,12 @@ Pic: </br>
 Date Completed: March 9, 2026 <br/>
 Purpose: You touch one part and TP you to other part </br>
 Key Concepts Learned: HumanChecker, TouchDetector and StopPlayerMovement <br/>
+snippet: ""
 Pic: </br>
 <img src="Teleporter.png" width="300">
+
+## Day11 TeleportMachine <br/>
+Date Completed: March 10, 2026 <br/>
+Purpose: When you get coins it updates your coin UI </br>
+Key Concepts Learned: Change and leaderstats <br/>
+snippet: "coins.Changed:Connect(function()" </br>

@@ -91,3 +91,4 @@ Date Completed: March 11, 2026 <br/>
 Purpose: When touch the button the gate opens </br>
 Key Concepts Learned: Nothing <br/>
 Pic: </br>
+<img src="GateButtonOpener.png" width="300">

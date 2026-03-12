@@ -86,9 +86,14 @@ Purpose: When you get coins it updates your coin UI </br>
 Key Concepts Learned: Change and leaderstats <br/>
 Snippet: "coins.Changed:Connect(function()" </br>
 
-## Day10 ButtonGateOpener <br/>
+## Day12 ButtonGateOpener <br/>
 Date Completed: March 11, 2026 <br/>
 Purpose: When touch the button the gate opens </br>
 Key Concepts Learned: Nothing <br/>
 Pic: </br>
 <img src="GateButtonOpener.png" width="300">
+
+## Day13 CoinsGambler <br/>
+Date Completed: March 12, 2026 <br/>
+Purpose: When click button gives you a 1 in 5 chances of getting 10 coins </br>
+Key Concepts Learned: Better version of randomness <br/>

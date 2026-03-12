@@ -80,8 +80,14 @@ Snippet: "local hum = part.Parent:FindFirstChild("HumanoidRootPart") return hum"
 Pic: </br>
 <img src="Teleporter.png" width="300">
 
-## Day11 TeleportMachine <br/>
+## Day11 CoinTracker <br/>
 Date Completed: March 10, 2026 <br/>
 Purpose: When you get coins it updates your coin UI </br>
 Key Concepts Learned: Change and leaderstats <br/>
 Snippet: "coins.Changed:Connect(function()" </br>
+
+## Day10 ButtonGateOpener <br/>
+Date Completed: March 11, 2026 <br/>
+Purpose: When touch the button the gate opens </br>
+Key Concepts Learned: Nothing <br/>
+Pic: </br>

@@ -1,0 +1,42 @@
+local MainGame = game.Workspace:WaitForChild("MainGame")
+local Gates = MainGame:WaitForChild("Gates")
+local Button = MainGame:WaitForChild("Buttons")
+
+local function ActivateButton(Button, Touched)
+	Touched.Value = true
+
+	local Gate = Gates:FindFirstChild(Button.Name)
+
+	if Gate then
+		Gate.Transparency = 1
+		Gate.CanCollide = false
+		Button.BrickColor = BrickColor.new("Really red")
+	end
+
+	local Duration = Button:WaitForChild("Duration")
+
+	local Timer = Duration.Value
+
+	while Timer > 0 do
+		print(Timer)
+		task.wait(1)
+		Timer = Timer - 1
+	end
+
+	Gate.Transparency = 0.25
+	Gate.CanCollide = true
+	Button.BrickColor = BrickColor.new("Lime green")
+
+	Touched.Value = false
+end
+
+for _, Button in pairs(Button:GetChildren()) do
+	Button.Touched:Connect(function(OtherPart)
+		local Humanoid = OtherPart.Parent:FindFirstChild("Humanoid")
+		local Touched = Button:FindFirstChild("Touched")
+
+		if Humanoid and Touched and Touched.Value == false then
+			ActivateButton(Button, Touched)
+		end
+	end)	
+end

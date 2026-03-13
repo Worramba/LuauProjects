@@ -97,5 +97,7 @@ Pic: </br>
 Date Completed: March 12, 2026 <br/>
 Purpose: When click button gives you a 1 in 5 chances of getting 10 coins </br>
 Key Concepts Learned: Better version of randomness <br/>
+Pic:
+<img src="CoinsGambler.png" width="300">
 
 ## Day14: Nothing Today <br/>

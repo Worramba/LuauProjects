@@ -101,3 +101,8 @@ Pic: <br/>
 <img src="MoneyGambler.png" width="300">
 
 ## Day14: Nothing Today <br/>
+
+## Day13 Leadorboard <br/>
+Date Completed: March 14, 2026 <br/>
+Purpose: Shows player the leaderboard </br>
+Key Concepts Learned: PlayerAdded <br/>

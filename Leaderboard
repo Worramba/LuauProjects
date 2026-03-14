@@ -1,0 +1,33 @@
+local DateStoreService = game:GetService("DataStoreService")
+local PlayerInventory = DateStoreService:GetDataStore("PlayerInventory")
+local playerCoins = DateStoreService:GetDataStore("playerCoins", "Coins")
+
+game.Players.PlayerAdded:Connect(function(player)
+	local leaderstats = Instance.new("Folder")
+	leaderstats.Name = "leaderstats"
+	leaderstats.Parent = player
+	
+	local coins = Instance.new("IntValue")
+	coins.Parent = leaderstats
+	coins.Name = "Coins"
+	
+	local success, currentCoins = pcall(function()
+		return playerCoins:GetAsync(player.UserId)
+	end)
+	if success then
+		coins.Value = currentCoins
+	else
+		coins.Value = 0
+	end
+	
+	local success, updatedValue = pcall(function()
+		return playerCoins:IncrementAsync(player.UserId, 10)
+	end)
+	if success then
+		coins.Value = updatedValue
+	end
+	
+	while true do
+		task.wait(60)
+	end
+end)

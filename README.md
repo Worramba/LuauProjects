@@ -106,5 +106,10 @@ Picture: <br/>
 Date Completed: March 14, 2026 <br/>
 Purpose: Shows player the leaderboard </br>
 Key Concepts Learned: PlayerAdded <br/>
+
+## Day13 Coins <br/>
+Date Completed: March 15, 2026 <br/>
+Purpose: When touches gives player extra coins </br>
+Key Concepts Learned: Calling specific player leaderboard <br/>
 Picture: </br>
 <img src="Coins.png" width="300">

@@ -1,0 +1,46 @@
+## First part
+local parts = script.Parent:GetChildren()
+while true do
+	for _, part in pairs(parts) do
+		if part:IsA("BasePart") then
+			part.CanCollide = true
+			part.Transparency = 0
+		end
+	end
+
+	task.wait(1.5)
+	
+	for _, part in pairs(parts) do
+		if part:IsA("BasePart") then
+			part.CanCollide = false
+			part.Transparency = 0.8
+		end
+	end
+
+	
+	task.wait(1.5)
+	
+end
+
+## Second part
+local parts = script.Parent:GetChildren()
+while true do
+	for _, part in pairs(parts) do
+		if part:IsA("BasePart") then
+		part.CanCollide = false
+		part.Transparency = 0.8
+		end
+	end
+	
+	task.wait(1.5)
+	
+	for _, part in pairs(parts) do
+		if part:IsA("BasePart") then
+			part.CanCollide = true
+			part.Transparency = 0
+		end
+	end
+	
+	task.wait(1.5)
+	
+end

@@ -120,3 +120,10 @@ Purpose: Every 1.5 seconds half the blocks disapear </br>
 Key Concepts Learned: pairs <br/>
 Picture: </br>
 <img src="TimedPart.png" width="300">
+
+## Day17 HealthBar <br/>
+Date Completed: March 17, 2026 <br/>
+Purpose: Making a new health bar </br>
+Key Concepts Learned: HealthChanged and SetCoreGuiEnabled <br/>
+Picture: </br>
+<img src="TimedPart.png" width="300">

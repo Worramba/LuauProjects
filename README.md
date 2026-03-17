@@ -126,4 +126,4 @@ Date Completed: March 17, 2026 <br/>
 Purpose: Making a new health bar </br>
 Key Concepts Learned: HealthChanged and SetCoreGuiEnabled <br/>
 Picture: </br>
-<img src="TimedPart.png" width="300">
+<img src="HealthBar.png" width="300">

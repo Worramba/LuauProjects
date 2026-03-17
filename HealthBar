@@ -1,0 +1,14 @@
+local player = game.Players.LocalPlayer.Character.Humanoid
+local loadingBar = script.ScreenGui:WaitForChild("LoadingBar").Bar
+local StarterGui = game:GetService("StarterGui")
+StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Health, false)
+
+local function updateHealth()
+	local progress = player.Health / player.MaxHealth 
+	loadingBar.Size = UDim2.new(progress, 0, 1, 0)
+	task.wait(0.01)
+end
+
+updateHealth()
+
+player.HealthChanged:Connect(updateHealth)

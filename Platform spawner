@@ -1,0 +1,62 @@
+local TweenService = game:GetService("TweenService")
+local tweenInfo = TweenInfo.new(10, Enum.EasingStyle.Linear)
+
+local platform = game.Workspace:WaitForChild("Platforms")
+local part = script.Parent
+local upLever = workspace:WaitForChild("UpLever")
+local downLever = workspace:WaitForChild("DownLever")
+
+local crumbs = game.Workspace:WaitForChild("CrumbSpawner"):GetChildren()
+
+local goalUp = {
+	Position = Vector3.new(-0.212, 11.275, 130.05)
+}
+local goalDown = {
+	Position = Vector3.new(5.412, -13.084, 130.05)
+}
+local tweenUp = TweenService:Create(platform, tweenInfo, goalUp)
+local tweenDown = TweenService:Create(platform, tweenInfo, goalDown)
+
+local spawner = game.Workspace:WaitForChild("PlatformSpawner")
+
+local switch = false
+local prompt = part.Attachment:WaitForChild("ProximityPrompt")
+
+local function SeeAble(crubs)
+	for _, p in pairs(crubs) do
+		if p:IsA("ParticleEmitter") then
+			p.Enabled = true
+		end
+	end
+end
+
+local function transperant(crubs)
+	for _, p in pairs(crubs) do
+		if p:IsA("ParticleEmitter") then
+			p.Enabled = false
+		end
+	end
+end
+
+prompt.Triggered:Connect(function(player)
+	if switch == true then
+		upLever.Transparency = 0
+		downLever.Transparency = 1
+		spawner.Transparency = 1
+		tweenDown:Play()
+		SeeAble(crumbs)
+		tweenDown.Completed:Wait()
+		transperant(crumbs)
+		switch = false
+	elseif switch == false then
+		upLever.Transparency = 1
+		downLever.Transparency = 0
+		tweenUp:Play()
+		SeeAble(crumbs)
+		tweenUp.Completed:Wait()
+		spawner.Transparency = 0
+		transperant(crumbs)
+		player.Character.HumanoidRootPart.Position = spawner.Position + Vector3.new(0, 3, 0)
+		switch = true
+	end
+end)

@@ -129,3 +129,10 @@ Picture: </br>
 <img src="HealthBar.png" width="300">
 
 ## Day19 MY BIRTHDAY WHOOOOOOOOOO!!!!! <br/>
+
+## Day20 HealthBar <br/>
+Date Completed: March 19, 2026 <br/>
+Purpose: Uses tween service to put platform when lever is used </br>
+Key Concepts Learned: Tween service and lever logic <br/>
+Picture: </br>
+<img src="HealthBar.png" width="300">

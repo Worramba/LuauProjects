@@ -136,3 +136,10 @@ Purpose: Uses tween service to put platform when lever is used </br>
 Key Concepts Learned: Tween service and lever logic <br/>
 Picture: </br>
 <img src="HealthBar.png" width="300">
+
+## Day21 PowerChoser <br/>
+Date Completed: March 20, 2026 <br/>
+Purpose: Gives you 2 options of powers to give you power </br>
+Key Concepts Learned: Tween service and lever logic <br/>
+Picture: </br>
+<img src="PowerChoser.png" width="300">

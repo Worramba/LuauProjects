@@ -102,7 +102,7 @@ Picture: <br/>
 
 ## Day14: Nothing Today <br/>
 
-## Day15 Leadorboard <br/>
+## Day15 Leaderboard <br/>
 Date Completed: March 14, 2026 <br/>
 Purpose: Shows player the leaderboard </br>
 Key Concepts Learned: PlayerAdded <br/>
@@ -114,7 +114,7 @@ Key Concepts Learned: Calling specific player leaderboard <br/>
 Picture: </br>
 <img src="Coins.png" width="300">
 
-## Day17 Coins <br/>
+## Day17 DisapearBlocks <br/>
 Date Completed: March 16, 2026 <br/>
 Purpose: Every 1.5 seconds half the blocks disapear </br>
 Key Concepts Learned: pairs <br/>

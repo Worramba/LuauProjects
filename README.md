@@ -100,7 +100,7 @@ Key Concepts Learned: Better version of randomness <br/>
 Picture: <br/>
 <img src="MoneyGambler.png" width="300">
 
-## Day14: Nothing Today <br/>
+## Day14: Reflection <br/>
 
 ## Day15 Leaderboard <br/>
 Date Completed: March 14, 2026 <br/>

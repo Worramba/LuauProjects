@@ -1,0 +1,30 @@
+task.wait(4)
+local player = game.Players.LocalPlayer
+local players = game:GetService("Players")
+local scrollingFrame = script.Parent:WaitForChild("ScrollingFrame")
+local template = script.Parent.ScrollingFrame:WaitForChild("Template")
+local uiList = scrollingFrame:WaitForChild("UIListLayout")
+print("all Variable Completed")
+
+local function createTemplate(p)
+	local newTemplate = template:Clone()
+	newTemplate.Parent = scrollingFrame
+	newTemplate.Name = p.Name
+	newTemplate.PlayerName.Text = p.Name
+	newTemplate.Visible = true
+	
+	local leaderstats = p:WaitForChild("HiddenStats")
+	local coins = leaderstats:WaitForChild("Coins")
+	
+	newTemplate.PlayerMoney.Text = coins.Value
+end
+
+for i, child in pairs(players:GetChildren()) do
+	if child:IsA("Player") then
+		createTemplate(child)
+	end
+end
+
+players.PlayerAdded:Connect(function(p)
+	createTemplate(p)
+end)

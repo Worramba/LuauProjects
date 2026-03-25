@@ -145,3 +145,10 @@ Picture: </br>
 <img src="PowerChoser.png" width="300">
 
 ## Day22 Reflection <br/>
+
+## Day23 CustomLeaderstats <br/>
+Date Completed: March 22, 2026 <br/>
+Purpose: Makes a leaderboard for the server with money </br>
+Key Concepts Learned: PlayerList, ListLayout and is a player <br/>
+Picture: </br>
+<img src="CustomLeaderstats.png" width="300">

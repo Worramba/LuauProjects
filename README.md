@@ -159,3 +159,5 @@ Purpose: A kill brick that moves from left to right </br>
 Key Concepts Learned: Nothing <br/>
 Picture: </br>
 <img src="MovingLazer.png" width="300">
+
+## Day25: Nothing Today <br/>

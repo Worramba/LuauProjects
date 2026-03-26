@@ -152,3 +152,10 @@ Purpose: Makes a leaderboard for the server with money </br>
 Key Concepts Learned: PlayerList, ListLayout and is a player <br/>
 Picture: </br>
 <img src="CustomLeaderstats.png" width="300">
+
+## Day23 MovingLazer <br/>
+Date Completed: March 23, 2026 <br/>
+Purpose: A kill brick that moves from left to right </br>
+Key Concepts Learned: Nothing <br/>
+Picture: </br>
+<img src="CustomLeaderstats.png" width="300">

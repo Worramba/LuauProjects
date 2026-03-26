@@ -158,4 +158,4 @@ Date Completed: March 23, 2026 <br/>
 Purpose: A kill brick that moves from left to right </br>
 Key Concepts Learned: Nothing <br/>
 Picture: </br>
-<img src="CustomLeaderstats.png" width="300">
+<img src="MovingLazer.png" width="300">

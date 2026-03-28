@@ -1,0 +1,65 @@
+local model = script.Parent
+local keys = model:GetChildren()
+
+local gate = model:WaitForChild("Gate")
+
+local displayLabel = model:WaitForChild("Displayer").SurfaceGui.TextLabel
+
+local position = 1
+local maxDigits = 4
+local currentCode = ""
+
+local correctCode = "1539"
+
+local function updateDisplay()
+	local display = currentCode
+	while #display < maxDigits do
+		display = display .. "0"
+	end
+	displayLabel.Text = display
+end
+
+local function reset()
+	position = 1
+	currentCode = ""
+	displayLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+	gate.Transparency = 0.25
+	gate.CanCollide = true
+	updateDisplay()
+end
+
+local function submitCode()
+	if currentCode == correctCode then
+		print("Correct code")
+		gate.Transparency = 1
+		gate.CanCollide = false
+		displayLabel.Text = "Correct"
+		displayLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+	else
+		print("Wrong code")
+		displayLabel.Text = "Incorrect"
+		displayLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
+	end
+	task.wait(2)
+	reset()
+end
+
+for _, key in pairs(keys) do
+	if key:IsA("BasePart") and key:FindFirstChild("NumberClicked") then
+		key.NumberClicked.MouseClick:Connect(function(player)
+			if position > maxDigits then return end
+
+			local value = tostring(key:WaitForChild("Value").Value)
+			currentCode = currentCode .. value
+			position += 1
+
+			updateDisplay()
+
+			if position > maxDigits then
+				submitCode()
+			end
+		end)
+	end
+end
+
+updateDisplay()

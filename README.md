@@ -161,3 +161,8 @@ Picture: </br>
 <img src="MovingLazer.png" width="300">
 
 ## Day25: Nothing Today <br/>
+
+## Day26 Sol'sLikeRNG <br/>
+Date Completed: March 25, 2026 <br/>
+Purpose: When clicks the button gives a cool animation </br>
+Key Concepts Learned: better use of tween and anchorpoint <br/>

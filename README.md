@@ -166,3 +166,8 @@
 **Date Completed:** March 25, 2026 <br/>
 **Purpose:** When clicks the button gives a cool animation </br>
 **Key Concepts Learned:** Learned to trigger animations with buttons and use tweens and anchor points. <br/>
+
+## Day27 NumberPad <br/>
+**Date Completed:** March 26, 2026 <br/>
+**Purpose:** A calculator looking number that to unlock a gate </br>
+**Key Concepts Learned:** Learned to store the numbers players enter in a variable (currentCode). <br/>

@@ -167,7 +167,7 @@
 **Purpose:** When clicks the button gives a cool animation </br>
 **Key Concepts Learned:** Learned to trigger animations with buttons and use tweens and anchor points. <br/>
 
-## Day27 NumberPad <br/>
-**Date Completed:** March 26, 2026 <br/>
-**Purpose:** A calculator looking number that to unlock a gate </br>
-**Key Concepts Learned:** Learned to store the numbers players enter in a variable (currentCode). <br/>
+## Day28 BetterUI <br/>
+**Date Completed:** March 27, 2026 <br/>
+**Purpose:** To make UI scripts better and also the style </br>
+**Key Concepts Learned:** Learned how to improved UI design with cleaner and organised scripts. <br/>

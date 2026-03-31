@@ -168,6 +168,14 @@
 **Key Concepts Learned:** Learned to trigger animations with buttons and use tweens and anchor points. <br/>
 
 ## Day28 BetterUI <br/>
-**Date Completed:** March 27, 2026 <br/>
+**Date Completed:** March 26, 2026 <br/>
 **Purpose:** To make UI scripts better and also the style </br>
 **Key Concepts Learned:** Learned how to improved UI design with cleaner and organised scripts. <br/>
+
+## Day29: Weekly Review <br/>
+
+## Day30: Polishing <br/>
+
+## Day31: Big Reflection <br/>
+
+## Day32: Resting <br/>

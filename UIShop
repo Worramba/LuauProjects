@@ -1,6 +1,5 @@
 --LocalScript
 local player = game.Players.LocalPlayer
-
 local openEvent = game.ReplicatedStorage:WaitForChild("OpenShopEvent")
 local buyEvent = game.ReplicatedStorage:WaitForChild("BuyItemEvent")
 
@@ -8,8 +7,46 @@ local shop = player:WaitForChild("PlayerGui"):WaitForChild("Shop")
 local base = shop:WaitForChild("ImageLabel")
 local closeButton = base:WaitForChild("CloseButton")
 
-openEvent.OnClientEvent:Connect(function()
+local shopData = {}
+
+local function affordableStuff()
+	for _, button in pairs(base:GetChildren()) do
+		if button:IsA("TextButton") and button.Name ~= "CloseButton" then
+			local itemInfo = shopData[button.Name]
+			if itemInfo then
+				local price = itemInfo.Price
+				local coins = player.HiddenStats.Coins.Value
+				if coins >= price then
+					button.TextColor3 = Color3.fromRGB(0, 255, 0)
+					button.UIStroke.Color = Color3.fromRGB(0, 255, 0)
+					button.UIStroke.Thickness = 1
+					button.Active = true
+				else
+					button.TextColor3 = Color3.fromRGB(255, 0, 0)
+					button.UIStroke.Color = Color3.fromRGB(255, 0, 0)
+					button.UIStroke.Thickness = 1
+					button.Active = false
+				end
+			end
+		end
+	end
+end
+
+player.HiddenStats.Coins.Changed:Connect(function()
+	if base.Visible then
+		affordableStuff()
+	end
+end)
+
+openEvent.OnClientEvent:Connect(function(data)
+	shopData = data
 	base.Visible = true
+	for _, button in pairs(base:GetChildren()) do
+		if button:IsA("TextButton") and button.Name ~= "CloseButton" then
+			button.Text = button.Name
+		end
+	end
+	affordableStuff()
 end)
 
 closeButton.MouseButton1Click:Connect(function()
@@ -30,15 +67,15 @@ buyEvent.OnClientEvent:Connect(function(status, itemName)
 	local button = base:FindFirstChild(itemName)
 	if not button then return end
 
+	affordableStuff()
+
 	if status == "Bought" then
 		button.Text = "Owned"
-		button.Active = false
 	elseif status == "TooExpensive" then
 		local OG = button.Text
 		button.Text = "Too Expensive"
 		task.wait(1)
 		button.Text = OG
-		button.Active = true
 	end
 end)
 
@@ -50,7 +87,11 @@ local prompt = script.Parent
 local purchasedItems = {}
 
 prompt.Triggered:Connect(function(player)
-	openEvent:FireClient(player)
+	local shopData = {}
+	for _, item in pairs(game.ServerStorage.ShopWeapons:GetChildren()) do
+		shopData[item.Name] = {Price = item:GetAttribute("Price") or 0}
+	end
+	openEvent:FireClient(player, shopData)
 end)
 
 buyEvent.OnServerEvent:Connect(function(player, itemName)

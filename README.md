@@ -185,5 +185,5 @@
 
 ## Day28 UIShop <br/>
 **Date Completed:** April 1, 2026 <br/>
-**Purpose:** To make a shop that opens when talk to npc </br>
-**Key Concepts Learned:** Learned <br/>
+**Purpose:** To make a shop that opens a UI when talking to an NPC </br>
+**Key Concepts Learned:** Learned to connect client scripts with server scripts with events <br/>

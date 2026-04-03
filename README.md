@@ -190,7 +190,12 @@
 **Picture:** </br>
 <img src="Shop.png" width="300">
 
-## Day34 UIShop(Updating) <br/>
+## Day34 UIShop(Update) <br/>
 **Date Completed:** April 2, 2026 <br/>
 **Purpose:** To make the items cost money </br>
 **Key Concepts Learned:** Learned to get players leaderstats and the values. <br/>
+
+## Day34 UIShop(Updating) <br/>
+**Date Completed:** April 3, 2026 <br/>
+**Purpose:** Checking if the price is affordable and shows through color </br>
+**Key Concepts Learned:** Practiced RemoteEvens and check if a player can afford items, and change UI colors based on that <br/> <br/>

@@ -1,5 +1,6 @@
 <h1 align="center">Hi 👋, I'm Aaron</h1>
 <h3 align="center">My goal for making this account is to be in MIT and graduate with ComputerScience and Electrical Engineering PHD</h3>
+<h3 align="center">Roblox dev(sort of beginner) • Luau and Python • Learning Game Systems & UI • Aspiring MIT CS & EE </h3>
 
 - 🔭 I’m currently working on **A tycoon on Roblox**
 
@@ -180,8 +181,9 @@
 
 ## Day32: Resting <br/>
 
-## Day28 BetterUI <br/>
-**Date Completed:** March 31, 2026 <br/>
-**Purpose:** To make UI scripts better and also the style </br>
-**Key Concepts Learned:** Learned how to improved UI design with cleaner and organised scripts. <br/>
+## Day33 EvenMorePolishing <br/>
 
+## Day28 UIShop <br/>
+**Date Completed:** April 1, 2026 <br/>
+**Purpose:** To make a shop that opens when talk to npc </br>
+**Key Concepts Learned:** Learned <br/>

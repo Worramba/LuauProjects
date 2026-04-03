@@ -1,0 +1,80 @@
+--LocalScript
+local player = game.Players.LocalPlayer
+
+local openEvent = game.ReplicatedStorage:WaitForChild("OpenShopEvent")
+local buyEvent = game.ReplicatedStorage:WaitForChild("BuyItemEvent")
+
+local shop = player:WaitForChild("PlayerGui"):WaitForChild("Shop")
+local base = shop:WaitForChild("ImageLabel")
+local closeButton = base:WaitForChild("CloseButton")
+
+openEvent.OnClientEvent:Connect(function()
+	base.Visible = true
+end)
+
+closeButton.MouseButton1Click:Connect(function()
+	base.Visible = false
+end)
+
+for _, button in pairs(base:GetChildren()) do
+	if button:IsA("TextButton") and button.Name ~= "CloseButton" then
+		local itemName = button.Name
+		button.MouseButton1Click:Connect(function()
+			buyEvent:FireServer(itemName)
+			button.Active = false
+		end)
+	end
+end
+
+buyEvent.OnClientEvent:Connect(function(status, itemName)
+	local button = base:FindFirstChild(itemName)
+	if not button then return end
+
+	if status == "Bought" then
+		button.Text = "Owned"
+		button.Active = false
+	elseif status == "TooExpensive" then
+		local OG = button.Text
+		button.Text = "Too Expensive"
+		task.wait(1)
+		button.Text = OG
+		button.Active = true
+	end
+end)
+
+--PromptScript
+local openEvent = game.ReplicatedStorage:WaitForChild("OpenShopEvent")
+local buyEvent = game.ReplicatedStorage:WaitForChild("BuyItemEvent")
+
+local prompt = script.Parent
+local purchasedItems = {}
+
+prompt.Triggered:Connect(function(player)
+	openEvent:FireClient(player)
+end)
+
+buyEvent.OnServerEvent:Connect(function(player, itemName)
+	local item = game.ServerStorage.ShopWeapons:FindFirstChild(itemName)
+	if not item then return end
+
+	local price = item:GetAttribute("Price") or 0
+
+	if not purchasedItems[player] then
+		purchasedItems[player] = {}
+	end
+
+	if purchasedItems[player][itemName] then
+		buyEvent:FireClient(player, "Owned", itemName)
+		return
+	end
+
+	if player.HiddenStats.Coins.Value >= price then
+		player.HiddenStats.Coins.Value -= price
+		local clone = item:Clone()
+		clone.Parent = player.Backpack
+		purchasedItems[player][itemName] = true
+		buyEvent:FireClient(player, "Bought", itemName)
+	else
+		buyEvent:FireClient(player, "TooExpensive", itemName)
+	end
+end)

@@ -179,3 +179,9 @@
 ## Day31: Big Reflection <br/>
 
 ## Day32: Resting <br/>
+
+## Day28 BetterUI <br/>
+**Date Completed:** March 31, 2026 <br/>
+**Purpose:** To make UI scripts better and also the style </br>
+**Key Concepts Learned:** Learned how to improved UI design with cleaner and organised scripts. <br/>
+

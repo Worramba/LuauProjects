@@ -186,6 +186,11 @@
 ## Day34 UIShop <br/>
 **Date Completed:** April 1, 2026 <br/>
 **Purpose:** To make a shop that opens a UI when talking to an NPC </br>
-**Key Concepts Learned:** Learned to connect client scripts with server scripts with events <br/>
+**Key Concepts Learned:** Learned to connect client scripts with server scripts with events. <br/>
 **Picture:** </br>
 <img src="Shop.png" width="300">
+
+## Day34 UIShop(Updating) <br/>
+**Date Completed:** April 2, 2026 <br/>
+**Purpose:** To make the items cost money </br>
+**Key Concepts Learned:** Learned to get players leaderstats and the values. <br/>

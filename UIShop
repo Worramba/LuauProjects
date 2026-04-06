@@ -6,116 +6,153 @@ local buyEvent = game.ReplicatedStorage:WaitForChild("BuyItemEvent")
 local shop = player:WaitForChild("PlayerGui"):WaitForChild("Shop")
 local base = shop:WaitForChild("ImageLabel")
 local closeButton = base:WaitForChild("CloseButton")
+local Template = base:WaitForChild("Template")
 
 local shopData = {}
 
-local function affordableStuff()
-	for _, button in pairs(base:GetChildren()) do
-		if button:IsA("TextButton") and button.Name ~= "CloseButton" then
-			local itemInfo = shopData[button.Name]
-			if itemInfo then
-				local price = itemInfo.Price
-				local coins = player.HiddenStats.Coins.Value
-				if coins >= price then
-					button.TextColor3 = Color3.fromRGB(0, 255, 0)
-					button.UIStroke.Color = Color3.fromRGB(0, 255, 0)
-					button.UIStroke.Thickness = 1
-					button.Active = true
-				else
-					button.TextColor3 = Color3.fromRGB(255, 0, 0)
-					button.UIStroke.Color = Color3.fromRGB(255, 0, 0)
-					button.UIStroke.Thickness = 1
-					button.Active = false
-				end
-			end
-		end
+local function updateAffordability(button, info)
+	if info.Owned then
+		button.TextColor3 = Color3.fromRGB(128, 128, 128) 
+	elseif player.HiddenStats.Coins.Value >= info.Price then
+		button.TextColor3 = Color3.fromRGB(0, 255, 0)
+	else
+		button.TextColor3 = Color3.fromRGB(255, 0, 0)
 	end
 end
 
-player.HiddenStats.Coins.Changed:Connect(function()
-	if base.Visible then
-		affordableStuff()
+local function newTemplate(displayName, info)
+	local newTemplate = Template:Clone()
+	newTemplate.Name = displayName
+	newTemplate.Visible = true
+	newTemplate.Parent = base.ScrollingFrame
+	newTemplate.Description.Text = info.Description or "No description"
+	local imageLabel = newTemplate:FindFirstChild("Image")
+	if imageLabel then
+		imageLabel.Image = "rbxassetid://" .. tostring(info.Image)
 	end
-end)
+	local button = newTemplate:WaitForChild("BuyButton")
+	updateAffordability(button, info)
+	if info.Owned then
+		button.Text = "Owned"
+		button.Active = false
+	else
+		button.Text = "Buy"
+		button.Active = true
+	end
+	button.MouseButton1Click:Connect(function()
+		if not button.Active then return end
+		button.Active = false
+		buyEvent:FireServer(info.Name)
+	end)
+end
 
 openEvent.OnClientEvent:Connect(function(data)
 	shopData = data
 	base.Visible = true
-	for _, button in pairs(base:GetChildren()) do
-		if button:IsA("TextButton") and button.Name ~= "CloseButton" then
-			button.Text = button.Name
+	for _, child in pairs(base.ScrollingFrame:GetChildren()) do
+		if child:IsA("Frame") and child.Name ~= "Template" then
+			child:Destroy()
 		end
 	end
-	affordableStuff()
+	for itemName, info in pairs(shopData) do
+		local displayName = itemName .. " - " .. info.Price .. " coins"
+		info.Name = itemName
+		newTemplate(displayName, info)
+	end
 end)
 
 closeButton.MouseButton1Click:Connect(function()
 	base.Visible = false
 end)
 
-for _, button in pairs(base:GetChildren()) do
-	if button:IsA("TextButton") and button.Name ~= "CloseButton" then
-		local itemName = button.Name
-		button.MouseButton1Click:Connect(function()
-			buyEvent:FireServer(itemName)
-			button.Active = false
-		end)
-	end
-end
-
 buyEvent.OnClientEvent:Connect(function(status, itemName)
-	local button = base:FindFirstChild(itemName)
+	local frame = base.ScrollingFrame:FindFirstChild(itemName .. " - " .. (shopData[itemName] and shopData[itemName].Price or "") .. " coins")
+	if not frame then return end
+	local button = frame:FindFirstChild("BuyButton")
 	if not button then return end
-
-	affordableStuff()
-
-	if status == "Bought" then
+	if status == "Bought" or status == "Owned" then
 		button.Text = "Owned"
+		button.Active = false
 	elseif status == "TooExpensive" then
-		local OG = button.Text
+		local original = button.Text
 		button.Text = "Too Expensive"
 		task.wait(1)
-		button.Text = OG
+		button.Text = original
+		button.Active = true
 	end
 end)
 
---PromptScript
+player.HiddenStats.Coins.Changed:Connect(function()
+	for _, frame in pairs(base.ScrollingFrame:GetChildren()) do
+		if frame:IsA("Frame") and frame:FindFirstChild("BuyButton") then
+			local button = frame.BuyButton
+			local info = shopData[frame.Name]
+			if info then
+				updateAffordability(button, info)
+			end
+		end
+	end
+end)
+
+--PartScript
 local openEvent = game.ReplicatedStorage:WaitForChild("OpenShopEvent")
 local buyEvent = game.ReplicatedStorage:WaitForChild("BuyItemEvent")
 
-local prompt = script.Parent
 local purchasedItems = {}
+local debounce = {}
 
-prompt.Triggered:Connect(function(player)
+local part = script.Parent
+part.Touched:Connect(function(hit)
+	local character = hit.Parent
+	local player = game.Players:GetPlayerFromCharacter(character)
+	if not player then return end
+	if debounce[player.UserId] then return end
+	debounce[player.UserId] = true
 	local shopData = {}
 	for _, item in pairs(game.ServerStorage.ShopWeapons:GetChildren()) do
-		shopData[item.Name] = {Price = item:GetAttribute("Price") or 0}
+		local price = item:GetAttribute("Price") or 0
+		local description = item:GetAttribute("Description") or "No description"
+		local image = item:GetAttribute("ImageID") or ""
+		local owned = false
+		if purchasedItems[player.UserId] and purchasedItems[player.UserId][item.Name] then
+			owned = true
+		end
+		shopData[item.Name] = {
+			Price = price,
+			Owned = owned,
+			Description = description,
+			Image = image
+		}
 	end
 	openEvent:FireClient(player, shopData)
+	task.delay(0.5, function()
+		debounce[player.UserId] = nil
+	end)
 end)
 
 buyEvent.OnServerEvent:Connect(function(player, itemName)
 	local item = game.ServerStorage.ShopWeapons:FindFirstChild(itemName)
 	if not item then return end
-
 	local price = item:GetAttribute("Price") or 0
-
-	if not purchasedItems[player] then
-		purchasedItems[player] = {}
-	end
-
+	if not purchasedItems[player] then purchasedItems[player] = {} end
 	if purchasedItems[player][itemName] then
 		buyEvent:FireClient(player, "Owned", itemName)
 		return
 	end
-
-	if player.HiddenStats.Coins.Value >= price then
-		player.HiddenStats.Coins.Value -= price
-		local clone = item:Clone()
-		clone.Parent = player.Backpack
-		purchasedItems[player][itemName] = true
-		buyEvent:FireClient(player, "Bought", itemName)
-	else
-		buyEvent:FireClient(player, "TooExpensive", itemName)
+	if player:FindFirstChild("HiddenStats") and player.HiddenStats:FindFirstChild("Coins") then
+		if player.HiddenStats.Coins.Value >= price then
+			player.HiddenStats.Coins.Value -= price
+			purchasedItems[player][itemName] = true
+			
+			local clone = item:Clone()
+			if player.Character then
+				clone.Parent = player.Backpack
+			else
+				clone.Parent = player:WaitForChild("Backpack")
+			end
+			buyEvent:FireClient(player, "Bought", itemName)
+		else
+			buyEvent:FireClient(player, "TooExpensive", itemName)
+		end
 	end
 end)

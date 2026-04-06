@@ -204,3 +204,8 @@
 **Date Completed:** April 4, 2026 <br/>
 **Purpose:** Checking if the price is affordable and shows through color </br>
 **Key Concepts Learned:** Upgraded the affordable function to be color coded <br/>
+
+## Day35 UIShop(Update4) <br/>
+**Date Completed:** April 5, 2026 <br/>
+**Purpose:** Added images and descriptions to items <br/>
+**Key Concepts Learned:** Improved the shop to be more dynamic and practiced using attributes to store item data <br/>

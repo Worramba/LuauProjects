@@ -209,3 +209,4 @@
 **Date Completed:** April 5, 2026 <br/>
 **Purpose:** Added images and descriptions to items <br/>
 **Key Concepts Learned:** Improved the shop to be more dynamic and practiced using attributes to store item data <br/>
+**Challenges:** Making it more dynamic, Adding images to the template, Using Attribute to store data

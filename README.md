@@ -224,3 +224,11 @@
 
 **Next:** Refine UI further, improve inventory interactions, and practice more advanced client-server communication for future projects <br/>
 
+## Day36 UIShop(Update4) <br/>
+**Date Completed:** April 7, 2026 <br/>
+
+**Purpose:** Start creating a custom inventory system for players <br/>
+
+**Key Concepts Learned:** Learned to store multiple items for each player using tables <br/>
+
+**Challenges:** Understanding how to make a event for inventory added

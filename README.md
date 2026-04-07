@@ -212,8 +212,15 @@
 **Challenges:** Making it more dynamic, Adding images to the template, Using Attribute to store data
 **Reflection:** Today I finished my shop system. I practiced lists, dictionaries, functions, if/else statements, loops, and user input. It took time, but I learned a lot and my shop works now
 
-## Day37 📝 WeeklyReview(Imporved) </br>
+## 📝 This Week Progress Log (New style) <br/>
 
-**Built:** 
+**Built:** UIShop from scratch, updates 1–4, added item costs, affordability checks, color coding, images, and dynamic descriptions <br/>
 
+**Practiced:** Connecting client and server scripts with RemoteEvents, using leaderstats, handling if/else logic, lists and dictionaries, loops, functions, and user input <br/>
+
+**Improved:** Made the shop dynamic, visually clear with color coding, and interactive for the player; practiced organizing data using Attributes <br/>
+
+**Difficult:** Making the shop dynamic with images and attribute data; ensuring the affordability function worked correctly and updated the UI in real-time <br/>
+
+**Next:** Refine UI further, improve inventory interactions, and practice more advanced client-server communication for future projects <br/>
 

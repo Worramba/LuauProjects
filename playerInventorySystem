@@ -1,0 +1,12 @@
+local Players = game:GetService("Players")
+
+local playerTools = {}
+
+Players.PlayerAdded:Connect(function(player)
+	playerTools[player.UserId] = {}
+	player.Backpack.ChildAdded:Connect(function(child)
+		if child:IsA("Tool") then
+			table.insert(playerTools[player.UserId], child.Name)
+		end
+	end)
+end)

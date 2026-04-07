@@ -211,3 +211,9 @@
 **Key Concepts Learned:** Improved the shop to be more dynamic and practiced using attributes to store item data <br/>
 **Challenges:** Making it more dynamic, Adding images to the template, Using Attribute to store data
 **Reflection:** Today I finished my shop system. I practiced lists, dictionaries, functions, if/else statements, loops, and user input. It took time, but I learned a lot and my shop works now
+
+## Day37 📝 WeeklyReview(Imporved) </br>
+
+**Built:** 
+
+

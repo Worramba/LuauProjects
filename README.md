@@ -232,3 +232,13 @@
 **Key Concepts Learned:** Learned to store multiple items for each player using tables <br/>
 
 **Challenges:** Understanding how to make a event for inventory added
+
+## Day37 UIShop(Update5) <br/>
+
+**Date Completed:** April 8, 2026 <br/>
+
+**Purpose:** To switch from the default backpack inventory to a custom inventory system <br/>
+
+**Key Concepts Learned:** Learned how to connect shop and custom inventory systems using ModuleScripts to share data across scripts <br/>
+
+**Challenges:** Switching from the default backpack system to a custom inventory system <br/>
